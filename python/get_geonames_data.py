@@ -13,6 +13,4 @@ def geonames_to_geojson_point(outfile):
         capitals.append(geojson.Feature(geometry=geojson.Point((round(float(i['lng']), 1), round(float(i['lat']), 1))),
                                         properties={'name': i['name'], 'country': i['countryName'], 'population': i['population']}))
     with open(outfile, 'w') as file:
-        geojson.dump(geojson.FeatureCollection(capitals), file)
-
-geonames_to_geojson_point('../data/capital_AN.geojson')
+        geojson.dump(geojson.FeatureCollection(capitals), file)c

@@ -12,60 +12,212 @@ var map = L.map('map', {
     layers: [streets, light]
     });
 
-var world = new L.geoJson();
-var capital_sa = new L.geoJson(capital_sa, {
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-        layer.on('mouseover', function() { layer.openPopup(); });
-        layer.on('mouseout', function() { layer.closePopup(); });
-    }
+var pointStyle = {
+    radius: 3,
+    fillColor: "blue",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 1
+};
 
+function getGDPClass(gdp) {
+    return gdp > 1500000 ? '#800026' :
+        gdp > 1000000 ? '#BD0026' :
+        gdp > 600000 ? '#E31A1C' :
+        gdp > 300000 ? '#FC4E2A' :
+        gdp > 150000 ? '#FD8D3C' :
+        gdp > 50000 ? '#FEB24C' :
+        gdp > 20000 ? '#FED976' :
+        '#FFEDA0';
+}
+
+var capital_sa = new L.geoJson(capital_sa, {
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
+    }
 });
 var capital_na = new L.geoJson(capital_na, {
-     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-        layer.on('mouseover', function() { layer.openPopup(); });
-        layer.on('mouseout', function() { layer.closePopup(); });
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
     }
 });
 var capital_eu = new L.geoJson(capital_eu, {
-     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-        layer.on('mouseover', function() { layer.openPopup(); });
-        layer.on('mouseout', function() { layer.closePopup(); });
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
     }
 });
 var capital_af = new L.geoJson(capital_af, {
-     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-        layer.on('mouseover', function() { layer.openPopup(); });
-        layer.on('mouseout', function() { layer.closePopup(); });
-     }
-});
-var capital_as = new L.geoJson(capital_as, {
-     onEachFeature: function (feature, layer) {
-         layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-         layer.on('mouseover', function() { layer.openPopup(); });
-         layer.on('mouseout', function() { layer.closePopup(); });
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
     }
 });
+var capital_as = new L.geoJson(capital_as, {
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
+    }
+
+});
 var capital_oc = new L.geoJson(capital_oc, {
-     onEachFeature: function (feature, layer) {
-         layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-         layer.on('mouseover', function() { layer.openPopup(); });
-         layer.on('mouseout', function() { layer.closePopup(); });
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
     }
 });
 var capital_an = new L.geoJson(capital_an, {
-     onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>population: '+feature.properties.population+'</p>', {closeButton: false, offset: L.point(0, -20)});
-        layer.on('mouseover', function() { layer.openPopup(); });
-        layer.on('mouseout', function() { layer.closePopup(); });
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        if (feature.properties.population > 1000000) {
+            return {
+                radius: feature.properties.population / 1000000 * 3
+            }
+        }
+    }
+});
+
+var world = new L.geoJson(world, {
+    style: function(feature) {
+        return {
+            fillColor: getGDPClass(feature.properties.gdp_md_est),
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+        }
     }
 });
 
 $.getJSON("data/world.geojson", function(data){
-    world.addData(data).addTo(map);
+    world.addData(data);
 });
 
 $.getJSON("data/capital_SA.geojson", function(data){
@@ -97,14 +249,14 @@ $.getJSON("data/capital_AN.geojson", function(data){
 });
 
 var overlays = {
-    "Countries boundaries": world,
     "South america": capital_sa,
     "North america": capital_na,
     "Europe": capital_eu,
     "Afrique": capital_af,
     "Asia": capital_as,
     "Oceania": capital_oc,
-    "Antartica": capital_an
+    "Antartica": capital_an,
+    "Countries boundaries": world
 }
 var baseLayers = {
     "Light": light,

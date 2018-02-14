@@ -55,6 +55,103 @@ function getPopulation(p) {
     }
 };
 
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+function highlightFeature(e) {
+    var layer = e.target;
+    indicatorInfo.update(layer.feature.properties);
+}
+
+function resetHighlight(e) {
+    indicatorInfo.update();
+}
+
+var indicatorInfo = L.control();
+
+indicatorInfo.onAdd = function(map) {
+    this._div = L.DomUtil.create('div', 'indicatorInfo');
+    this.update();
+    return this._div;
+};
+
+indicatorInfo.update = function(props) {
+    this._div.innerHTML = '<h4>GDP</h4>' + (props ?
+        '<b>' + props.country + '</b><br />' + props.value + ' US dollar' :
+        'Hover over a state');
+};
+
+var legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function(map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000],
+        labels = [],
+        from,
+        to;
+
+    for (var i = 0; i < grades.length; i++) {
+        from = grades[i];
+        to = grades[i + 1];
+
+        labels.push(
+            '<i style="background:' + getGDP(from + 1) + '"></i> ' +
+            from + (to ? '&ndash;' + to : '+'));
+    }
+    div.innerHTML = labels.join('<br>');
+    return div
+};
+
+legend.addTo(map);
+
+var world = new L.geoJson(world, {
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.pop_est + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+        layer.on({
+            click: zoomToFeature,
+        });
+    },
+    style: function(feature) {
+        return {
+            fillColor: population(feature.properties.pop_est),
+            weight: 1,
+            opacity: 1,
+            color: "black",
+            fillOpacity: 0.7
+        }
+    }
+});
+
+var wb_gdp = new L.geoJson(wb_gdp, {
+    onEachFeature: function(feature, layer) {
+        layer.on({
+            click: zoomToFeature,
+            mouseover: highlightFeature,
+            mouseout: resetHighlight
+        });
+    },
+    style: function(feature) {
+        return {
+            fillColor: getGDP(feature.properties.value),
+            weight: 1,
+            opacity: 1,
+            color: 'black',
+            fillOpacity: 0.7
+        }
+    }
+});
+
 var capital_sa = new L.geoJson(capital_sa, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
@@ -66,7 +163,9 @@ var capital_sa = new L.geoJson(capital_sa, {
         });
         layer.on('mouseout', function() {
             layer.closePopup();
-
+        });
+        layer.on({
+            click: zoomToFeature
         });
     },
     pointToLayer: function(feature, latlng) {
@@ -220,42 +319,16 @@ var capital_an = new L.geoJson(capital_an, {
 
     }
 });
-var world = new L.geoJson(world, {
-    style: function(feature) {
-        return {
-            fillColor: population(feature.properties.pop_est),
-            weight: 1,
-            opacity: 1,
-            color: "black",
-            fillOpacity: 0.7
-        }
-    }
-});
 
-var wb_gdp = new L.geoJson(wb_gdp, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.country + '</h1><p>GDP: ' + feature.properties.value + '<br>year: ' + feature.properties.year + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    style: function(feature) {
-        return {
-            fillColor: getGDP(feature.properties.value),
-            weight: 1,
-            opacity: 1,
-            color: 'black',
-            fillOpacity: 0.7
-        }
-    }
-});
+var cities = L.layerGroup([capital_an, capital_sa, capital_as, capital_eu, capital_af, capital_oc, capital_na])
 
+
+$.getJSON("data/wb_gdp.json", function(data) {
+    wb_gdp.addData(data).addTo(map)
+});
+$.getJSON("data/world.geojson", function(data) {
+    world.addData(data)
+});
 
 $.getJSON("data/capital_SA.geojson", function(data) {
     capital_sa.addData(data)
@@ -285,27 +358,16 @@ $.getJSON("data/capital_AN.geojson", function(data) {
     capital_an.addData(data)
 });
 
-$.getJSON("data/wb_gdp.json", function(data) {
-    wb_gdp.addData(data)
-});
-$.getJSON("data/world.geojson", function(data) {
-    world.addData(data)
-});
-
 var overlays = {
-    "South america": capital_sa,
-    "North america": capital_na,
-    "Europe": capital_eu,
-    "Africa": capital_af,
-    "Asia": capital_as,
-    "Oceania": capital_oc,
-    "Antarctica": capital_an,
     "GDP World Bank": wb_gdp,
-    "Country population": world
+    "Country population": world,
+    "Capital": cities
 }
 var baseLayers = {
     "Light": light,
     "Streets": streets
 }
+
+indicatorInfo.addTo(map);
 
 L.control.layers(baseLayers, overlays).addTo(map);

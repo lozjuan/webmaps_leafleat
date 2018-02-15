@@ -1,0 +1,2552 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Chile",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.1080243902439
+        },
+        "geometry":
+        {
+            "coordinates": [-70.6, -33.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Peru",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.3838780487805
+        },
+        "geometry":
+        {
+            "coordinates": [-77.0, -12.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Colombia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.5217317073171
+        },
+        "geometry":
+        {
+            "coordinates": [-74.1, 4.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Argentina",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.1557804878049
+        },
+        "geometry":
+        {
+            "coordinates": [-58.4, -34.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Guyana",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 65.2006585365854
+        },
+        "geometry":
+        {
+            "coordinates": [-58.2, 6.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Suriname",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.1439756097561
+        },
+        "geometry":
+        {
+            "coordinates": [-55.2, 5.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bolivia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 61.8288292682927
+        },
+        "geometry":
+        {
+            "coordinates": [-65.3, -19.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Uruguay",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.0955609756098
+        },
+        "geometry":
+        {
+            "coordinates": [-56.2, -34.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Paraguay",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.5974390243903
+        },
+        "geometry":
+        {
+            "coordinates": [-57.6, -25.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Brazil",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.8492195121951
+        },
+        "geometry":
+        {
+            "coordinates": [-47.9, -15.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Ecuador",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.492
+        },
+        "geometry":
+        {
+            "coordinates": [-78.5, -0.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Cuba",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.1024634146341
+        },
+        "geometry":
+        {
+            "coordinates": [-82.4, 23.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mexico",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.7447073170732
+        },
+        "geometry":
+        {
+            "coordinates": [-99.1, 19.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Barbados",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.5463170731707
+        },
+        "geometry":
+        {
+            "coordinates": [-59.6, 13.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Puerto Rico",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.7604878048781
+        },
+        "geometry":
+        {
+            "coordinates": [-66.1, 18.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "United States",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 76.9365853658537
+        },
+        "geometry":
+        {
+            "coordinates": [-77.0, 38.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Guatemala",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.6211219512195
+        },
+        "geometry":
+        {
+            "coordinates": [-90.5, 14.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Honduras",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.9110487804878
+        },
+        "geometry":
+        {
+            "coordinates": [-87.2, 14.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "El Salvador",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 69.2978780487805
+        },
+        "geometry":
+        {
+            "coordinates": [-89.2, 13.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Panama",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.4626829268293
+        },
+        "geometry":
+        {
+            "coordinates": [-79.5, 9.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Nicaragua",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.5858780487805
+        },
+        "geometry":
+        {
+            "coordinates": [-86.3, 12.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Haiti",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 58.1993658536585
+        },
+        "geometry":
+        {
+            "coordinates": [-72.3, 18.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Curacao",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-68.9, 12.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Jamaica",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.6750243902439
+        },
+        "geometry":
+        {
+            "coordinates": [-76.8, 18.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Dominican Republic",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.0518048780488
+        },
+        "geometry":
+        {
+            "coordinates": [-70.0, 18.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Costa Rica",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.7094634146341
+        },
+        "geometry":
+        {
+            "coordinates": [-84.1, 9.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Canada",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.590243902439
+        },
+        "geometry":
+        {
+            "coordinates": [-75.7, 45.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Trinidad and Tobago",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.7104390243903
+        },
+        "geometry":
+        {
+            "coordinates": [-61.5, 10.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Dominica",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 76.5975609756098
+        },
+        "geometry":
+        {
+            "coordinates": [-61.4, 15.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Greenland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.1626829268293
+        },
+        "geometry":
+        {
+            "coordinates": [-51.7, 64.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Aruba",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.8621707317073
+        },
+        "geometry":
+        {
+            "coordinates": [-70.0, 12.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Cayman Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-81.4, 19.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Belize",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.5443658536585
+        },
+        "geometry":
+        {
+            "coordinates": [-88.8, 17.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bermuda",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.0878048780488
+        },
+        "geometry":
+        {
+            "coordinates": [-64.8, 32.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Antigua and Barbuda",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.8154390243902
+        },
+        "geometry":
+        {
+            "coordinates": [-61.8, 17.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Turks and Caicos Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-71.1, 21.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "British Virgin Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-64.6, 18.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Grenada",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.6907317073171
+        },
+        "geometry":
+        {
+            "coordinates": [-61.8, 12.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Spain",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.5682926829268
+        },
+        "geometry":
+        {
+            "coordinates": [-3.7, 40.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Denmark",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 76.8951219512195
+        },
+        "geometry":
+        {
+            "coordinates": [12.6, 55.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Belgium",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.0756097560976
+        },
+        "geometry":
+        {
+            "coordinates": [4.3, 50.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Germany",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.2292682926829
+        },
+        "geometry":
+        {
+            "coordinates": [13.4, 52.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "United Kingdom",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.1439024390244
+        },
+        "geometry":
+        {
+            "coordinates": [-0.1, 51.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Ireland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.6341463414634
+        },
+        "geometry":
+        {
+            "coordinates": [-6.2, 53.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Luxembourg",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.9658536585366
+        },
+        "geometry":
+        {
+            "coordinates": [6.1, 49.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "France",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.2609756097561
+        },
+        "geometry":
+        {
+            "coordinates": [2.3, 48.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Switzerland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 80.3853658536585
+        },
+        "geometry":
+        {
+            "coordinates": [7.4, 46.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Romania",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.009756097561
+        },
+        "geometry":
+        {
+            "coordinates": [26.1, 44.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Ukraine",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.2756097560976
+        },
+        "geometry":
+        {
+            "coordinates": [30.5, 50.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Poland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.4975609756098
+        },
+        "geometry":
+        {
+            "coordinates": [21.0, 52.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bulgaria",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.8658536585366
+        },
+        "geometry":
+        {
+            "coordinates": [23.3, 42.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Sweden",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.8463414634146
+        },
+        "geometry":
+        {
+            "coordinates": [18.1, 59.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Netherlands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.2926829268293
+        },
+        "geometry":
+        {
+            "coordinates": [4.9, 52.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Iceland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 80.5024390243903
+        },
+        "geometry":
+        {
+            "coordinates": [-21.9, 64.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Hungary",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.3487804878049
+        },
+        "geometry":
+        {
+            "coordinates": [19.0, 47.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Italy",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 80.2292682926829
+        },
+        "geometry":
+        {
+            "coordinates": [12.5, 41.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Portugal",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.0658536585366
+        },
+        "geometry":
+        {
+            "coordinates": [-9.1, 38.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Finland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.119512195122
+        },
+        "geometry":
+        {
+            "coordinates": [24.9, 60.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Belarus",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.0560975609756
+        },
+        "geometry":
+        {
+            "coordinates": [27.6, 53.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Estonia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.9048780487805
+        },
+        "geometry":
+        {
+            "coordinates": [24.8, 59.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Serbia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.2853658536585
+        },
+        "geometry":
+        {
+            "coordinates": [20.5, 44.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Kosovo",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.9439024390244
+        },
+        "geometry":
+        {
+            "coordinates": [21.2, 42.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Lithuania",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.7609756097561
+        },
+        "geometry":
+        {
+            "coordinates": [25.3, 54.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Moldova",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.247487804878
+        },
+        "geometry":
+        {
+            "coordinates": [28.9, 47.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Austria",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.6780487804878
+        },
+        "geometry":
+        {
+            "coordinates": [16.4, 48.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Albania",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.6706585365854
+        },
+        "geometry":
+        {
+            "coordinates": [19.8, 41.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Latvia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.9609756097561
+        },
+        "geometry":
+        {
+            "coordinates": [24.1, 56.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Greece",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.6414634146341
+        },
+        "geometry":
+        {
+            "coordinates": [23.7, 38.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Cyprus",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.2239512195122
+        },
+        "geometry":
+        {
+            "coordinates": [33.4, 35.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Norway",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.9878048780488
+        },
+        "geometry":
+        {
+            "coordinates": [10.7, 59.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Croatia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.7173170731707
+        },
+        "geometry":
+        {
+            "coordinates": [16.0, 45.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bosnia and Herzegovina",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.6755853658537
+        },
+        "geometry":
+        {
+            "coordinates": [18.4, 43.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Montenegro",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.2277317073171
+        },
+        "geometry":
+        {
+            "coordinates": [19.3, 42.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Slovenia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 76.0073170731707
+        },
+        "geometry":
+        {
+            "coordinates": [14.5, 46.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Gibraltar",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-5.4, 36.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Faroe Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.8439024390244
+        },
+        "geometry":
+        {
+            "coordinates": [-6.8, 62.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Monaco",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [7.4, 43.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Andorra",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [1.5, 42.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Liechtenstein",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.6365853658537
+        },
+        "geometry":
+        {
+            "coordinates": [9.5, 47.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Isle of Man",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 77.9658536585366
+        },
+        "geometry":
+        {
+            "coordinates": [-4.5, 54.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "San Marino",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 81.119512195122
+        },
+        "geometry":
+        {
+            "coordinates": [12.4, 43.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Malta",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.7390243902439
+        },
+        "geometry":
+        {
+            "coordinates": [14.5, 35.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "New Caledonia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.1024390243903
+        },
+        "geometry":
+        {
+            "coordinates": [166.4, -22.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Australia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 79.9365853658537
+        },
+        "geometry":
+        {
+            "coordinates": [149.1, -35.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "New Zealand",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.8463414634146
+        },
+        "geometry":
+        {
+            "coordinates": [174.8, -41.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Fiji",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.9670975609756
+        },
+        "geometry":
+        {
+            "coordinates": [178.4, -18.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Papua New Guinea",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 62.4753414634146
+        },
+        "geometry":
+        {
+            "coordinates": [147.2, -9.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Solomon Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 64.3900487804878
+        },
+        "geometry":
+        {
+            "coordinates": [159.9, -9.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Vanuatu",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.3035365853658
+        },
+        "geometry":
+        {
+            "coordinates": [168.3, -17.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Kiribati",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 64.3664634146342
+        },
+        "geometry":
+        {
+            "coordinates": [173.0, 1.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Tonga",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.039243902439
+        },
+        "geometry":
+        {
+            "coordinates": [-175.2, -21.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "French Polynesia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.1526341463415
+        },
+        "geometry":
+        {
+            "coordinates": [-149.6, -17.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Samoa",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.1293902439024
+        },
+        "geometry":
+        {
+            "coordinates": [-171.8, -13.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "American Samoa",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [-170.7, -14.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Tuvalu",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [179.2, -8.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Marshall Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [171.4, 7.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Nauru",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [166.9, -0.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Northern Mariana Islands",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [145.8, 15.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Guam",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.7950731707317
+        },
+        "geometry":
+        {
+            "coordinates": [144.7, 13.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Palau",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": null
+        },
+        "geometry":
+        {
+            "coordinates": [134.6, 7.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bangladesh",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 66.4496585365854
+        },
+        "geometry":
+        {
+            "coordinates": [90.4, 23.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Afghanistan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 56.6535365853659
+        },
+        "geometry":
+        {
+            "coordinates": [69.2, 34.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Nepal",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 63.6909024390244
+        },
+        "geometry":
+        {
+            "coordinates": [85.3, 27.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Philippines",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.4537073170732
+        },
+        "geometry":
+        {
+            "coordinates": [121.0, 14.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Thailand",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.1050731707317
+        },
+        "geometry":
+        {
+            "coordinates": [100.5, 13.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Indonesia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 66.608243902439
+        },
+        "geometry":
+        {
+            "coordinates": [106.8, -6.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "China",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.873
+        },
+        "geometry":
+        {
+            "coordinates": [116.4, 39.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Cambodia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 60.1874878048781
+        },
+        "geometry":
+        {
+            "coordinates": [104.9, 11.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Japan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 81.5634146341463
+        },
+        "geometry":
+        {
+            "coordinates": [139.7, 35.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Uzbekistan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.5536341463415
+        },
+        "geometry":
+        {
+            "coordinates": [69.2, 41.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Georgia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.1985609756098
+        },
+        "geometry":
+        {
+            "coordinates": [44.8, 41.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Armenia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.8883902439024
+        },
+        "geometry":
+        {
+            "coordinates": [44.5, 40.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Azerbaijan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 67.3106097560976
+        },
+        "geometry":
+        {
+            "coordinates": [49.9, 40.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Vietnam",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.5765609756098
+        },
+        "geometry":
+        {
+            "coordinates": [105.8, 21.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Turkey",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.0819756097561
+        },
+        "geometry":
+        {
+            "coordinates": [32.9, 39.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Lebanon",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.4120975609756
+        },
+        "geometry":
+        {
+            "coordinates": [35.5, 33.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Jordan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.1324878048781
+        },
+        "geometry":
+        {
+            "coordinates": [35.9, 32.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Saudi Arabia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.9191219512195
+        },
+        "geometry":
+        {
+            "coordinates": [46.7, 24.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Iraq",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 68.9420243902439
+        },
+        "geometry":
+        {
+            "coordinates": [44.4, 33.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mongolia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 63.8546829268293
+        },
+        "geometry":
+        {
+            "coordinates": [106.9, 47.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Sri Lanka",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.5795853658537
+        },
+        "geometry":
+        {
+            "coordinates": [79.8, 6.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bhutan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 62.4738780487805
+        },
+        "geometry":
+        {
+            "coordinates": [89.6, 27.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Tajikistan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 66.3907073170732
+        },
+        "geometry":
+        {
+            "coordinates": [68.8, 38.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Maldives",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.0136585365854
+        },
+        "geometry":
+        {
+            "coordinates": [73.5, 4.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Malaysia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.1594634146341
+        },
+        "geometry":
+        {
+            "coordinates": [101.7, 3.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Singapore",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 78.5512195121951
+        },
+        "geometry":
+        {
+            "coordinates": [103.9, 1.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Kazakhstan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 65.9682926829268
+        },
+        "geometry":
+        {
+            "coordinates": [71.4, 51.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Oman",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.2231951219512
+        },
+        "geometry":
+        {
+            "coordinates": [58.4, 23.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Qatar",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 76.7463902439025
+        },
+        "geometry":
+        {
+            "coordinates": [51.5, 25.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Bahrain",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 74.9007804878049
+        },
+        "geometry":
+        {
+            "coordinates": [50.6, 26.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "United Arab Emirates",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 75.0183170731707
+        },
+        "geometry":
+        {
+            "coordinates": [54.4, 24.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Turkmenistan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 64.0626341463415
+        },
+        "geometry":
+        {
+            "coordinates": [58.4, 38.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "India",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 63.3745365853659
+        },
+        "geometry":
+        {
+            "coordinates": [77.2, 28.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Pakistan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 63.2261707317073
+        },
+        "geometry":
+        {
+            "coordinates": [73.0, 33.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Kuwait",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.4640487804878
+        },
+        "geometry":
+        {
+            "coordinates": [48.0, 29.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Madagascar",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 59.6991707317073
+        },
+        "geometry":
+        {
+            "coordinates": [47.5, -18.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Zambia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 46.2862195121951
+        },
+        "geometry":
+        {
+            "coordinates": [28.3, -15.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Burkina Faso",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.2816585365854
+        },
+        "geometry":
+        {
+            "coordinates": [-1.5, 12.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Senegal",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 58.6122195121951
+        },
+        "geometry":
+        {
+            "coordinates": [-17.4, 14.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Angola",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.3015609756098
+        },
+        "geometry":
+        {
+            "coordinates": [13.2, -8.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Ghana",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 57.3999268292683
+        },
+        "geometry":
+        {
+            "coordinates": [-0.2, 5.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Uganda",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.1908536585366
+        },
+        "geometry":
+        {
+            "coordinates": [32.6, 0.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mozambique",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.3285853658537
+        },
+        "geometry":
+        {
+            "coordinates": [32.6, -26.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Algeria",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.2703902439025
+        },
+        "geometry":
+        {
+            "coordinates": [3.1, 36.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Ethiopia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 53.3386829268293
+        },
+        "geometry":
+        {
+            "coordinates": [38.7, 9.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Kenya",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 52.542756097561
+        },
+        "geometry":
+        {
+            "coordinates": [36.8, -1.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Somalia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.5018536585366
+        },
+        "geometry":
+        {
+            "coordinates": [45.3, 2.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Libya",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 70.8855365853659
+        },
+        "geometry":
+        {
+            "coordinates": [13.2, 32.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Guinea-Bissau",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 52.602
+        },
+        "geometry":
+        {
+            "coordinates": [-15.6, 11.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Guinea",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.4445365853659
+        },
+        "geometry":
+        {
+            "coordinates": [-13.7, 9.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Chad",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 47.6150975609756
+        },
+        "geometry":
+        {
+            "coordinates": [15.0, 12.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Central African Republic",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 43.6963170731707
+        },
+        "geometry":
+        {
+            "coordinates": [18.6, 4.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Benin",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 55.9486585365854
+        },
+        "geometry":
+        {
+            "coordinates": [2.6, 6.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Sierra Leone",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 40.6429024390244
+        },
+        "geometry":
+        {
+            "coordinates": [-13.2, 8.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Gabon",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 59.1055853658537
+        },
+        "geometry":
+        {
+            "coordinates": [9.5, 0.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Togo",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 53.678756097561
+        },
+        "geometry":
+        {
+            "coordinates": [1.2, 6.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mauritania",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 60.1895365853659
+        },
+        "geometry":
+        {
+            "coordinates": [-16.0, 18.1],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Cameroon",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.031756097561
+        },
+        "geometry":
+        {
+            "coordinates": [11.5, 3.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Niger",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.1095365853659
+        },
+        "geometry":
+        {
+            "coordinates": [2.1, 13.5],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mali",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.5246097560976
+        },
+        "geometry":
+        {
+            "coordinates": [-8.0, 12.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Tunisia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 73.7213902439024
+        },
+        "geometry":
+        {
+            "coordinates": [10.2, 36.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Equatorial Guinea",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 53.429243902439
+        },
+        "geometry":
+        {
+            "coordinates": [8.8, 3.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Liberia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 52.796756097561
+        },
+        "geometry":
+        {
+            "coordinates": [-10.8, 6.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Swaziland",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 46.4211219512195
+        },
+        "geometry":
+        {
+            "coordinates": [31.1, -26.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Comoros",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 59.5989268292683
+        },
+        "geometry":
+        {
+            "coordinates": [43.3, -11.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Malawi",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 47.1303414634146
+        },
+        "geometry":
+        {
+            "coordinates": [33.8, -14.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "South Africa",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 54.3149512195122
+        },
+        "geometry":
+        {
+            "coordinates": [28.2, -25.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Lesotho",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 46.269512195122
+        },
+        "geometry":
+        {
+            "coordinates": [27.5, -29.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Botswana",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.0437804878049
+        },
+        "geometry":
+        {
+            "coordinates": [25.9, -24.7],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Mauritius",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 71.9658536585366
+        },
+        "geometry":
+        {
+            "coordinates": [57.5, -20.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Rwanda",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 50.911512195122
+        },
+        "geometry":
+        {
+            "coordinates": [30.1, -1.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Djibouti",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 57.2205609756098
+        },
+        "geometry":
+        {
+            "coordinates": [43.1, 11.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Morocco",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 69.6701463414634
+        },
+        "geometry":
+        {
+            "coordinates": [-6.8, 34.0],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Zimbabwe",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 44.0606341463415
+        },
+        "geometry":
+        {
+            "coordinates": [31.1, -17.8],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Eritrea",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 56.4930975609756
+        },
+        "geometry":
+        {
+            "coordinates": [38.9, 15.3],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "South Sudan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 49.993243902439
+        },
+        "geometry":
+        {
+            "coordinates": [31.6, 4.9],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Sudan",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 59.1769268292683
+        },
+        "geometry":
+        {
+            "coordinates": [32.5, 15.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Burundi",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 51.9331951219512
+        },
+        "geometry":
+        {
+            "coordinates": [29.4, -3.4],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Namibia",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 54.0798292682927
+        },
+        "geometry":
+        {
+            "coordinates": [17.1, -22.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Seychelles",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 72.9536585365854
+        },
+        "geometry":
+        {
+            "coordinates": [55.5, -4.6],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Tanzania",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 53.1301463414634
+        },
+        "geometry":
+        {
+            "coordinates": [35.7, -6.2],
+            "type": "Point"
+        }
+    },
+    {
+        "type": "Feature",
+        "properties":
+        {
+            "country": "Nigeria",
+            "name": "Life expectancy at birth, total (years)",
+            "life_expectancy": 46.8299512195122
+        },
+        "geometry":
+        {
+            "coordinates": [7.5, 9.1],
+            "type": "Point"
+        }
+    }]
+}

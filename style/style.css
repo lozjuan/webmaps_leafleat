@@ -29,6 +29,8 @@
  .legend {
      line-height: 18px;
      color: #555;
+     background: white;
+     padding: 10px;
  }
 
  .legend i {

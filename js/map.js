@@ -49,6 +49,15 @@ function getGDP(gdp) {
         '#FFEDA0';
 }
 
+function getlifeExp(le) {
+    return le > 90 ? '#800026' :
+        le > 80 ? '#BD0026' :
+        le > 70 ? '#FC4E2A' :
+        le > 60 ? '#FD8D3C' :
+        le > 40 ? '#FED976' :
+        '#FFEDA0';
+}
+
 function getPopulation(p) {
     if (p > 1000000) {
         return radius = p / 1000000 * 3
@@ -83,28 +92,41 @@ indicatorInfo.update = function(props) {
 };
 
 var legend = L.control({ position: 'bottomright' });
-
 legend.onAdd = function(map) {
-
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000],
-        labels = [],
-        from,
-        to;
-
+        labels = ['<strong> Word Bank API Data<br>in millions US dollars</strong>'],
+        values = ['0-10', '10-100', '100- 1000', '1000-10000', '10000-100000',
+            '100000-1000000', '100000000-1000000000', '10000000000+'
+        ],
+        from;
     for (var i = 0; i < grades.length; i++) {
+        value = values[i];
         from = grades[i];
-        to = grades[i + 1];
-
         labels.push(
-            '<i style="background:' + getGDP(from + 1) + '"></i> ' +
-            from + (to ? '&ndash;' + to : '+'));
+            '<i style="background:' + getGDP(from + 1) + '"></i> ' + value);
     }
     div.innerHTML = labels.join('<br>');
     return div
 };
 
-legend.addTo(map);
+
+var legend2 = L.control({ position: 'bottomleft' })
+legend2.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 5000000, 10000000, 30000000, 60000000, 90000000, 1100000000, 1300000000],
+        labels = ['<strong>Country population</strong>'],
+        values = ['0-5', '5-10', '10-30', '30-60', '60-90', '90-110', '110-130', '130+'],
+        from;
+    for (var i = 0; i < grades.length; i++) {
+        value = values[i];
+        from = grades[i];
+        labels.push(
+            '<i style="background:' + population(from + 1) + '"></i> ' + value);
+    }
+    div.innerHTML = labels.join('<br>');
+    return div
+};
 
 var world = new L.geoJson(world, {
     onEachFeature: function(feature, layer) {
@@ -144,6 +166,34 @@ var wb_gdp = new L.geoJson(wb_gdp, {
     style: function(feature) {
         return {
             fillColor: getGDP(feature.properties.value),
+            weight: 1,
+            opacity: 1,
+            color: 'black',
+            fillOpacity: 0.7
+        }
+    }
+});
+
+var wb_lf_exp = new L.geoJson(wb_lf_exp, {
+    onEachFeature: function(feature, layer) {
+        layer.bindPopup('<h1>' + feature.properties.country + '</h1><p>life expectancy: ' + feature.properties.life_expectancy + '</p>', {
+            closeButton: false,
+            offset: L.point(0, -20)
+        });
+        layer.on('mouseover', function() {
+            layer.openPopup();
+        });
+        layer.on('mouseout', function() {
+            layer.closePopup();
+        });
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, pointStyle);
+    },
+    style: function(feature) {
+        return {
+            radius: 20,
+            fillColor: getlifeExp(feature.properties.life_expectancy),
             weight: 1,
             opacity: 1,
             color: 'black',
@@ -358,10 +408,15 @@ $.getJSON("data/capital_AN.geojson", function(data) {
     capital_an.addData(data)
 });
 
+$.getJSON("data/wb_life_expectancy.json", function(data) {
+    wb_lf_exp.addData(data).addTo(map)
+});
+
 var overlays = {
     "GDP World Bank": wb_gdp,
     "Country population": world,
-    "Capital": cities
+    "Capital": cities,
+    "Life expectancy": wb_lf_exp
 }
 var baseLayers = {
     "Light": light,
@@ -369,5 +424,27 @@ var baseLayers = {
 }
 
 indicatorInfo.addTo(map);
-
 L.control.layers(baseLayers, overlays).addTo(map);
+
+map.on('overlayadd', function(eventLayer) {
+    switch (eventLayer.name) {
+        case ('GDP World Bank'):
+            legend.addTo(this);
+            break;
+        case ('Country population'):
+            legend2.addTo(this);
+            break;
+    }
+});
+
+map.on('overlayremove', function(eventLayer) {
+    switch (eventLayer.name) {
+        case ('GDP World Bank'):
+            this.removeControl(legend);
+
+            break;
+        case ('Country population'):
+            this.removeControl(legend2);
+            break;
+    }
+});

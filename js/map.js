@@ -50,11 +50,13 @@ function getGDP(gdp) {
 }
 
 function getlifeExp(le) {
-    return le > 90 ? '#800026' :
-        le > 80 ? '#BD0026' :
-        le > 70 ? '#FC4E2A' :
-        le > 60 ? '#FD8D3C' :
-        le > 40 ? '#FED976' :
+    return le > 83 ? '#800026' :
+        le > 81 ? '#BD0026' :
+        le > 76 ? '#E31A1C' :
+        le > 75 ? '#FC4E2A' :
+        le > 72 ? '#FD8D3C' :
+        le > 70 ? '#FEB24C' :
+        le > 66 ? '#FED976' :
         '#FFEDA0';
 }
 
@@ -92,23 +94,32 @@ indicatorInfo.update = function(props) {
 };
 
 var legend = L.control({ position: 'bottomright' });
-legend.onAdd = function(map) {
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000],
-        labels = ['<strong> Word Bank API Data<br>in millions US dollars</strong>'],
-        values = ['0-10', '10-100', '100- 1000', '1000-10000', '10000-100000',
-            '100000-1000000', '100000000-1000000000', '10000000000+'
-        ],
-        from;
-    for (var i = 0; i < grades.length; i++) {
-        value = values[i];
-        from = grades[i];
-        labels.push(
-            '<i style="background:' + getGDP(from + 1) + '"></i> ' + value);
-    }
-    div.innerHTML = labels.join('<br>');
-    return div
-};
+$.getJSON("data/wb_gdp.json", function(data) {
+    var properties = [];
+    $.each(data.features, function(key, val) {
+        $.each(val.properties, function(i, j) {
+            properties.push(j);
+        })
+        console.log(properties);
+    });
+    legend.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000],
+            labels = ['<strong> Word Bank API Data<br>'+ properties[2]+ ' ' + properties[3] +'</strong>'],
+            values = ['0-10', '10-100', '100- 1000', '1000-10000', '10000-100000',
+                '100000-1000000', '100000000-1000000000', '10000000000+'
+            ],
+            from;
+        for (var i = 0; i < grades.length; i++) {
+            value = values[i];
+            from = grades[i];
+            labels.push(
+                '<i style="background:' + getGDP(from + 1) + '"></i> ' + value);
+        }
+        div.innerHTML = labels.join('<br>');
+        return div
+    };
+});
 
 
 var legend2 = L.control({ position: 'bottomleft' })
@@ -128,6 +139,23 @@ legend2.onAdd = function(map) {
     return div
 };
 
+var legend1 = L.control({ position: 'bottomleft' })
+legend1.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 66, 70, 72, 75, 77, 81, 83],
+        labels = ['<strong>Life expectancy</strong>'],
+        values = ['66', '66-70', '70-72', '72-75', '75-77', '77-81', '81-83', '83+'],
+        from;
+    for (var i = 0; i < grades.length; i++) {
+        value = values[i];
+        from = grades[i];
+        labels.push(
+            '<i id="circle" style="background:' + getlifeExp(from + 1) + '"></i> ' + value);
+    }
+    div.innerHTML = labels.join('<br>');
+    return div
+
+};
 var world = new L.geoJson(world, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.pop_est + '</p>', {
@@ -176,7 +204,7 @@ var wb_gdp = new L.geoJson(wb_gdp, {
 
 var wb_lf_exp = new L.geoJson(wb_lf_exp, {
     onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.country + '</h1><p>life expectancy: ' + feature.properties.life_expectancy + '</p>', {
+        layer.bindPopup('<h1>' + feature.properties.country + '</h1><p>life expectancy: ' + feature.properties.value + '</p>', {
             closeButton: false,
             offset: L.point(0, -20)
         });
@@ -193,7 +221,7 @@ var wb_lf_exp = new L.geoJson(wb_lf_exp, {
     style: function(feature) {
         return {
             radius: 20,
-            fillColor: getlifeExp(feature.properties.life_expectancy),
+            fillColor: getlifeExp(feature.properties.value),
             weight: 1,
             opacity: 1,
             color: 'black',
@@ -202,7 +230,7 @@ var wb_lf_exp = new L.geoJson(wb_lf_exp, {
     }
 });
 
-var capital_sa = new L.geoJson(capital_sa, {
+var capitals = new L.geoJson(capitals, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
             closeButton: false,
@@ -227,151 +255,6 @@ var capital_sa = new L.geoJson(capital_sa, {
         }
     }
 });
-var capital_na = new L.geoJson(capital_na, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-    }
-});
-var capital_eu = new L.geoJson(capital_eu, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-    }
-
-});
-var capital_af = new L.geoJson(capital_af, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-    }
-
-
-});
-var capital_as = new L.geoJson(capital_as, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-
-
-    }
-
-});
-var capital_oc = new L.geoJson(capital_oc, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-
-
-    }
-});
-var capital_an = new L.geoJson(capital_an, {
-    onEachFeature: function(feature, layer) {
-        layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
-            closeButton: false,
-            offset: L.point(-0, -20)
-        });
-        layer.on('mouseover', function() {
-            layer.openPopup();
-        });
-        layer.on('mouseout', function() {
-            layer.closePopup();
-        });
-    },
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, pointStyle);
-    },
-    style: function(feature) {
-        return {
-            radius: getPopulation(feature.properties.population)
-        }
-
-
-    }
-});
-
-var cities = L.layerGroup([capital_an, capital_sa, capital_as, capital_eu, capital_af, capital_oc, capital_na])
-
 
 $.getJSON("data/wb_gdp.json", function(data) {
     wb_gdp.addData(data).addTo(map)
@@ -380,42 +263,18 @@ $.getJSON("data/world.geojson", function(data) {
     world.addData(data)
 });
 
-$.getJSON("data/capital_SA.geojson", function(data) {
-    capital_sa.addData(data)
+$.getJSON("data/wb_life_exp.json", function(data) {
+    wb_lf_exp.addData(data)
 });
 
-$.getJSON("data/capital_NA.geojson", function(data) {
-    capital_na.addData(data)
-});
-
-$.getJSON("data/capital_EU.geojson", function(data) {
-    capital_eu.addData(data)
-});
-
-$.getJSON("data/capital_AF.geojson", function(data) {
-    capital_af.addData(data)
-});
-
-$.getJSON("data/capital_AS.geojson", function(data) {
-    capital_as.addData(data)
-});
-
-$.getJSON("data/capital_OC.geojson", function(data) {
-    capital_oc.addData(data)
-});
-
-$.getJSON("data/capital_AN.geojson", function(data) {
-    capital_an.addData(data)
-});
-
-$.getJSON("data/wb_life_expectancy.json", function(data) {
-    wb_lf_exp.addData(data).addTo(map)
+$.getJSON("data/capitals.json", function(data) {
+    capitals.addData(data)
 });
 
 var overlays = {
     "GDP World Bank": wb_gdp,
     "Country population": world,
-    "Capital": cities,
+    "Capital": capitals,
     "Life expectancy": wb_lf_exp
 }
 var baseLayers = {
@@ -426,6 +285,19 @@ var baseLayers = {
 indicatorInfo.addTo(map);
 L.control.layers(baseLayers, overlays).addTo(map);
 
+var capitalsLegend = L.control.htmllegend({
+    position: 'bottomright',
+    legends: [{
+        name: 'Capital',
+        layer: capitals,
+        elements: [{
+            label: 'Population',
+            html: "<div id='circle'></div>"
+        }]
+    }],
+});
+map.addControl(capitalsLegend);
+
 map.on('overlayadd', function(eventLayer) {
     switch (eventLayer.name) {
         case ('GDP World Bank'):
@@ -433,6 +305,9 @@ map.on('overlayadd', function(eventLayer) {
             break;
         case ('Country population'):
             legend2.addTo(this);
+            break;
+        case ('Life expectancy'):
+            legend1.addTo(this);
             break;
     }
 });
@@ -445,6 +320,9 @@ map.on('overlayremove', function(eventLayer) {
             break;
         case ('Country population'):
             this.removeControl(legend2);
+            break;
+        case ('Life expectancy'):
+            this.removeControl(legend1);
             break;
     }
 });

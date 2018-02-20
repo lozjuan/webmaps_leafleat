@@ -22,7 +22,7 @@ def geonames_to_geojson_point(outfile):
         geojson.dump(geojson.FeatureCollection(capitals), file)
 
 
-def wb_indicator_to_geojson_point(outfile, ind_code, year):
+def wb_indicator_to_geojson_point(ind_code, year):
     """converts json data from world bank api to geojson point. Outfile argument is a filepath"""
     data_source = "http://api.worldbank.org/v2/countries/all/indicators/" \
                   "{0}?date={1}&format=json&per_page=300".format(ind_code, year)
@@ -39,12 +39,12 @@ def wb_indicator_to_geojson_point(outfile, ind_code, year):
                                                            'value': c1['value'],
                                                            'year': c1['date'],
                                                            'indicator': c1['indicator']['value']}))
-    with open(outfile, 'w') as file:
+    with open('../data/wb_ind_point.json', 'w') as file:
         geojson.dump(geojson.FeatureCollection(capital), file)
     create_wb_legend_values('../data/ind_legend_point.json', ind_code, year)
 
 
-def wb_indicator_to_geojson_polygon(outfile, ind_code, year):
+def wb_indicator_to_geojson_polygon(ind_code, year):
     """converts json data from world bank api to geojson polygon. Outfile argument is a filepath"""
     countries = []
     data_source = "http://api.worldbank.org/v2/countries/all/indicators/" \
@@ -65,7 +65,7 @@ def wb_indicator_to_geojson_polygon(outfile, ind_code, year):
                                                  properties={'country': c1['country']['value'],
                                                              'indicator': c1['indicator']['value'],
                                                              'value': c1['value'], 'year': c1['date']}))
-    with open(outfile, 'w') as file:
+    with open('../data/wb_ind_polygon.json', 'w') as file:
         geojson.dump(geojson.FeatureCollection(countries), file)
     create_wb_legend_values('../data/ind_legend_polygon.json', ind_code, year)
 
@@ -91,3 +91,5 @@ def create_wb_legend_values(outfile, ind_code, year):
 
     with open(outfile, 'w') as file:
         file.write(json.dumps(dict(enumerate(int_percentiles))))
+
+wb_indicator_to_geojson_polygon('AG.LND.FRST.ZS', 2014)

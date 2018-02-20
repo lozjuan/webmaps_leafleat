@@ -27,39 +27,6 @@ var pointStyle = {
     fillOpacity: 1
 };
 
-function population(p) {
-    return p > 1300000000 ? '#800026' :
-        p > 1100000000 ? '#BD0026' :
-        p > 90000000 ? '#E31A1C' :
-        p > 60000000 ? '#FC4E2A' :
-        p > 30000000 ? '#FD8D3C' :
-        p > 10000000 ? '#FEB24C' :
-        p > 5000000 ? '#FED976' :
-        '#FFEDA0';
-}
-
-function getGDP(gdp) {
-    return gdp > 10000000000000 ? '#800026' :
-        gdp > 1000000000000 ? '#BD0026' :
-        gdp > 100000000000 ? '#E31A1C' :
-        gdp > 10000000000 ? '#FC4E2A' :
-        gdp > 1000000000 ? '#FD8D3C' :
-        gdp > 100000000 ? '#FEB24C' :
-        gdp > 10000000 ? '#FED976' :
-        '#FFEDA0';
-}
-
-function getlifeExp(le) {
-    return le > 83 ? '#800026' :
-        le > 81 ? '#BD0026' :
-        le > 76 ? '#E31A1C' :
-        le > 75 ? '#FC4E2A' :
-        le > 72 ? '#FD8D3C' :
-        le > 70 ? '#FEB24C' :
-        le > 66 ? '#FED976' :
-        '#FFEDA0';
-}
-
 function getPopulation(p) {
     if (p > 1000000) {
         return radius = p / 1000000 * 3
@@ -88,41 +55,82 @@ indicatorInfo.onAdd = function(map) {
 };
 
 indicatorInfo.update = function(props) {
-    this._div.innerHTML = '<h4>GDP</h4>' + (props ?
-        '<b>' + props.country + '</b><br />' + props.value + ' US dollar' :
+    this._div.innerHTML = '<h4>Indicator Value</h4>' + (props ?
+        '<b>' + props.country + '</b><br />' + props.value  :
         'Hover over a state');
 };
 
+//Polygon1 indicator map legend
 var legend = L.control({ position: 'bottomright' });
-$.getJSON("data/wb_gdp.json", function(data) {
-    var properties = [];
-    $.each(data.features, function(key, val) {
-        $.each(val.properties, function(i, j) {
-            properties.push(j);
-        })
-        console.log(properties);
-    });
+var lab = [];
+$.getJSON("data/ind_legend_polygon.json", function(data) {
+    lab.push(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
+});
+
+function getColorlgd(c) {
+    return c > lab[7] ? '#800026' :
+        c > lab[6] ? '#BD0026' :
+        c > lab[5] ? '#E31A1C' :
+        c > lab[4] ? '#FC4E2A' :
+        c > lab[3] ? '#FD8D3C' :
+        c > lab[2] ? '#FEB24C' :
+        c > lab[1] ? '#FED976' :
+        c === null ? '#000' :
+        '#FFEDA0';
+}
+$.getJSON("data/wb_ind_polygon.json", function(data) {
+    var title = data.features[1].properties.indicator;
+    var year = data.features[1].properties.year;
     legend.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 10000000, 100000000, 1000000000, 10000000000, 100000000000, 1000000000000, 10000000000000],
-            labels = ['<strong> Word Bank API Data<br>'+ properties[2]+ ' ' + properties[3] +'</strong>'],
-            values = ['0-10', '10-100', '100- 1000', '1000-10000', '10000-100000',
-                '100000-1000000', '100000000-1000000000', '10000000000+'
+            grades = [lab[0], lab[1], lab[2], lab[3], lab[4], lab[5], lab[6], lab[7]],
+            labels = ['<strong> Word Bank API Data<br>' + title + ' ' + year + '</strong>'],
+            values = ['< ' + lab[0].toString(), '< ' + lab[1].toString(), '< ' + lab[2].toString(),
+                '< ' + lab[3].toString(), '< ' + lab[4].toString(), '< ' + lab[5].toString(), '< ' + lab[6].toString(), '+ ' + lab[7].toString()
             ],
             from;
         for (var i = 0; i < grades.length; i++) {
             value = values[i];
             from = grades[i];
             labels.push(
-                '<i style="background:' + getGDP(from + 1) + '"></i> ' + value);
+                '<i style="background:' + getColorlgd(from + 1) + '"></i> ' + value);
         }
         div.innerHTML = labels.join('<br>');
         return div
     };
 });
-
-
+//Polygon1 layer object (dynamic indicator)
+var wb_polygon = new L.geoJson(wb_polygon, {
+    onEachFeature: function(feature, layer) {
+        layer.on({
+            click: zoomToFeature,
+            mouseover: highlightFeature,
+            mouseout: resetHighlight
+        });
+    },
+    style: function(feature) {
+        return {
+            fillColor: getColorlgd(feature.properties.value),
+            weight: 1,
+            opacity: 1,
+            color: 'black',
+            fillOpacity: 0.7
+        }
+    }
+});
+//Polygon2 map legend (country population static)
 var legend2 = L.control({ position: 'bottomleft' })
+
+function population(p) {
+    return p > 1300000000 ? '#800026' :
+        p > 1100000000 ? '#BD0026' :
+        p > 90000000 ? '#E31A1C' :
+        p > 60000000 ? '#FC4E2A' :
+        p > 30000000 ? '#FD8D3C' :
+        p > 10000000 ? '#FEB24C' :
+        p > 5000000 ? '#FED976' :
+        '#FFEDA0';
+}
 legend2.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 5000000, 10000000, 30000000, 60000000, 90000000, 1100000000, 1300000000],
@@ -138,24 +146,7 @@ legend2.onAdd = function(map) {
     div.innerHTML = labels.join('<br>');
     return div
 };
-
-var legend1 = L.control({ position: 'bottomleft' })
-legend1.onAdd = function(map) {
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 66, 70, 72, 75, 77, 81, 83],
-        labels = ['<strong>Life expectancy</strong>'],
-        values = ['66', '66-70', '70-72', '72-75', '75-77', '77-81', '81-83', '83+'],
-        from;
-    for (var i = 0; i < grades.length; i++) {
-        value = values[i];
-        from = grades[i];
-        labels.push(
-            '<i id="circle" style="background:' + getlifeExp(from + 1) + '"></i> ' + value);
-    }
-    div.innerHTML = labels.join('<br>');
-    return div
-
-};
+//Polygone2 layer object (country population static) 
 var world = new L.geoJson(world, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.pop_est + '</p>', {
@@ -182,27 +173,47 @@ var world = new L.geoJson(world, {
         }
     }
 });
-
-var wb_gdp = new L.geoJson(wb_gdp, {
-    onEachFeature: function(feature, layer) {
-        layer.on({
-            click: zoomToFeature,
-            mouseover: highlightFeature,
-            mouseout: resetHighlight
-        });
-    },
-    style: function(feature) {
-        return {
-            fillColor: getGDP(feature.properties.value),
-            weight: 1,
-            opacity: 1,
-            color: 'black',
-            fillOpacity: 0.7
-        }
-    }
+//Point map legend (dynamic legend)
+var lab1 = [];
+$.getJSON("data/ind_legend_point.json", function(data) {
+    lab1.push(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
 });
+var legend1 = L.control({ position: 'bottomleft' })
 
-var wb_lf_exp = new L.geoJson(wb_lf_exp, {
+function getColorPoint(c) {
+    return c > lab1[7] ? '#800026' :
+        c > lab1[6] ? '#BD0026' :
+        c > lab1[5] ? '#E31A1C' :
+        c > lab1[4] ? '#FC4E2A' :
+        c > lab1[3] ? '#FD8D3C' :
+        c > lab1[2] ? '#FEB24C' :
+        c > lab1[1] ? '#FED976' :
+        c === null ? '#000' :
+        '#FFEDA0';
+
+}
+$.getJSON("data/wb_ind_point.json", function(data) {
+    legend1.onAdd = function(map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = grades = [lab1[0], lab1[1], lab1[2], lab1[3], lab1[4], lab1[5], lab1[6], lab1[7]],
+            labels = [data.features[1].properties.indicator + ' ' + data.features[1].properties.year],
+            values = ['< ' + lab1[0].toString(), '< ' + lab1[1].toString(), '< ' + lab1[2].toString(),
+                '< ' + lab1[3].toString(), '< ' + lab1[4].toString(), '< ' + lab1[5].toString(), '< ' + lab1[6].toString(), '+ ' + lab1[7].toString()
+            ],
+            from;
+        for (var i = 0; i < grades.length; i++) {
+            value = values[i];
+            from = grades[i];
+            labels.push(
+                '<i id="circle" style="background:' + getColorPoint(from + 1) + '"></i> ' + value);
+        }
+        div.innerHTML = labels.join('<br>');
+        return div
+
+    };
+});
+//Point layer object (dynamic indicator)
+var wb_point = new L.geoJson(wb_point, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.country + '</h1><p>life expectancy: ' + feature.properties.value + '</p>', {
             closeButton: false,
@@ -221,7 +232,7 @@ var wb_lf_exp = new L.geoJson(wb_lf_exp, {
     style: function(feature) {
         return {
             radius: 20,
-            fillColor: getlifeExp(feature.properties.value),
+            fillColor: getColorPoint(feature.properties.value),
             weight: 1,
             opacity: 1,
             color: 'black',
@@ -229,7 +240,7 @@ var wb_lf_exp = new L.geoJson(wb_lf_exp, {
         }
     }
 });
-
+//Point layer object (capitals) 
 var capitals = new L.geoJson(capitals, {
     onEachFeature: function(feature, layer) {
         layer.bindPopup('<h1>' + feature.properties.name + '</h1><p>population: ' + feature.properties.population + '</p>', {
@@ -256,15 +267,15 @@ var capitals = new L.geoJson(capitals, {
     }
 });
 
-$.getJSON("data/wb_gdp.json", function(data) {
-    wb_gdp.addData(data).addTo(map)
+$.getJSON("data/wb_ind_polygon.json", function(data) {
+    wb_polygon.addData(data).addTo(map)
 });
 $.getJSON("data/world.geojson", function(data) {
     world.addData(data)
 });
 
-$.getJSON("data/wb_life_exp.json", function(data) {
-    wb_lf_exp.addData(data)
+$.getJSON("data/wb_ind_point.json", function(data) {
+    wb_point.addData(data)
 });
 
 $.getJSON("data/capitals.json", function(data) {
@@ -272,10 +283,10 @@ $.getJSON("data/capitals.json", function(data) {
 });
 
 var overlays = {
-    "GDP World Bank": wb_gdp,
     "Country population": world,
     "Capital": capitals,
-    "Life expectancy": wb_lf_exp
+    "World Bank Indicator Polygon": wb_polygon,
+    "World Bank Indicator Point": wb_point
 }
 var baseLayers = {
     "Light": light,
@@ -285,6 +296,7 @@ var baseLayers = {
 indicatorInfo.addTo(map);
 L.control.layers(baseLayers, overlays).addTo(map);
 
+//Legend capitals layer (htmllegend plugin)
 var capitalsLegend = L.control.htmllegend({
     position: 'bottomright',
     legends: [{
@@ -300,13 +312,13 @@ map.addControl(capitalsLegend);
 
 map.on('overlayadd', function(eventLayer) {
     switch (eventLayer.name) {
-        case ('GDP World Bank'):
+        case ('World Bank Indicator Polygon'):
             legend.addTo(this);
             break;
         case ('Country population'):
             legend2.addTo(this);
             break;
-        case ('Life expectancy'):
+        case ('World Bank Indicator Point'):
             legend1.addTo(this);
             break;
     }
@@ -314,14 +326,14 @@ map.on('overlayadd', function(eventLayer) {
 
 map.on('overlayremove', function(eventLayer) {
     switch (eventLayer.name) {
-        case ('GDP World Bank'):
+        case ('World Bank Indicator Polygon'):
             this.removeControl(legend);
 
             break;
         case ('Country population'):
             this.removeControl(legend2);
             break;
-        case ('Life expectancy'):
+        case ('World Bank Indicator Point'):
             this.removeControl(legend1);
             break;
     }

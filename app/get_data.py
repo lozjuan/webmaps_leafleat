@@ -3,7 +3,13 @@ import geojson
 import json
 import numpy as np
 from app import app
-import os
+
+
+@app.after_request
+def add_header(response):
+    """Avoid cache Json files to be saved in browser in order to display data dynamically"""
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0"
+    return response
 
 
 def geonames_to_geojson_point(outfile):
@@ -14,11 +20,11 @@ def geonames_to_geojson_point(outfile):
         req = 'http://api.geonames.org/searchJSON?featureCode=PPLC&continentCode=' + i + '&username=lozjuan'
         r = requests.get(req)
         data_json = r.json()
-        for i in data_json['geonames']:
+        for x in data_json['geonames']:
             capitals.append(
-                geojson.Feature(geometry=geojson.Point((round(float(i['lng']), 1), round(float(i['lat']), 1))),
-                                properties={'name': i['name'], 'country': i['countryName'],
-                                            'population': i['population']}))
+                geojson.Feature(geometry=geojson.Point((round(float(x['lng']), 1), round(float(x['lat']), 1))),
+                                properties={'name': x['name'], 'country': x['countryName'],
+                                            'population': x['population']}))
 
     with open(outfile, 'w') as file:
         geojson.dump(geojson.FeatureCollection(capitals), file)

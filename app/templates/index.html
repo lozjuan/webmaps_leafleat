@@ -13,32 +13,34 @@
 </head>
 
 <body>
-<form action="{{url_for('get_point_indicator')}}" method="post">
-    <p>Point layer indicator</p>
-    <select name="point_ind">
-        <option value="AG.LND.FRST.ZS">Forest area (% of land area)</option>
-        <option value="SP.RUR.TOTL">Rural population</option>
-        <option value="EN.ATM.CO2E.PC">CO2 emissions (metric tons per capita)</option>
-        <option value="NY.GDP.MKTP.PP.CD">GDP, PPP (current international $)</option>
-        <option value="SE.ADT.1524.LT.ZS">Literacy rate, youth total (% of people ages 15-24)</option>
+<form action="{{url_for('get_polygon_indicator')}}" method="post">
+    <p>Polygon layer indicator</p>
+    <select id="list_ind" name="polygon_ind">
+        <optgroup label="World development indicators">
+            <option disabled selected value> -- select an option -- </option>
+            {% for k, v in codes[0]['wdi'].items() %}
+            <option value="{{ k }}">{{ v }}</option>
+            {% endfor %}
+        </optgroup>
     </select>
-    <select name="point_year">
+    <select name="polygon_year">
         <option value="1990">1990</option>
         <option value="2000">2000</option>
         <option value="2010">2010</option>
     </select>
     <button type="submit"> Go</button>
 </form>
-<form action="{{url_for('get_polygon_indicator')}}" method="post">
-    <p>Polygon layer indicator</p>
-    <select name="polygon_ind">
-        <option value="AG.LND.FRST.ZS">Forest area (% of land area)</option>
-        <option value="SP.RUR.TOTL">Rural population</option>
-        <option value="EN.ATM.CO2E.PC">CO2 emissions (metric tons per capita)</option>
-        <option value="NY.GDP.MKTP.PP.CD">GDP, PPP (current international $)</option>
-        <option value="SE.ADT.1524.LT.ZS">Literacy rate, youth total (% of people ages 15-24)</option>
+<form action="{{url_for('get_point_indicator')}}" method="post">
+    <p>Point layer indicator</p>
+    <select id="list_ind" name="point_ind">
+        <optgroup label="Health nutrition">
+            <option disabled selected value> -- select an option -- </option>
+            {% for k, v in codes[3]['hnp'].items() %}
+            <option value="{{ k }}">{{ v }}</option>
+            {% endfor %}
+        </optgroup>
     </select>
-    <select name="polygon_year">
+    <select name="point_year">
         <option value="1990">1990</option>
         <option value="2000">2000</option>
         <option value="2010">2010</option>

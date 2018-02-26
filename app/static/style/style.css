@@ -54,3 +54,7 @@
 .visibility-toggle {
      display: none;
 }
+
+#list_ind {
+    width: 20%;
+}

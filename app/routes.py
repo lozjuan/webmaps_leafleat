@@ -1,15 +1,16 @@
 from werkzeug.utils import redirect
 from app import app
 from flask import render_template, request
-import logging
-
+import json
 from app.get_data import wb_indicator_to_geojson_polygon, wb_indicator_to_geojson_point
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Home')
+    with open('app/static/data/indicator_codes.json', 'r') as codes:
+        codes = json.load(codes)
+    return render_template('index.html', title='Home', codes=codes)
 
 
 @app.route('/get_polygon_indicator', methods=['GET', 'POST'])

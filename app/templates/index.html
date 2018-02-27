@@ -17,16 +17,17 @@
     <p>Polygon layer indicator</p>
     <select id="list_ind" name="polygon_ind">
         <optgroup label="World development indicators">
-            <option disabled selected value> -- select an option -- </option>
-            {% for k, v in codes[0]['wdi'].items() %}
-            <option value="{{ k }}">{{ v }}</option>
+            <option disabled selected value> -- select a world development indicator -- </option>
+            {% for i in codes[0]['wdi'] | dictsort(false, 'value') %}
+                <option value="{{ i[0] }}">{{ i[1] }}</option>
             {% endfor %}
         </optgroup>
     </select>
     <select name="polygon_year">
-        <option value="1990">1990</option>
-        <option value="2000">2000</option>
-        <option value="2010">2010</option>
+        <option disabled selected value> -- select a year -- </option>
+        {% for y in year %}
+            <option value="{{ y }}">{{ y }}</option>
+        {% endfor %}
     </select>
     <button type="submit"> Go</button>
 </form>
@@ -34,16 +35,17 @@
     <p>Point layer indicator</p>
     <select id="list_ind" name="point_ind">
         <optgroup label="Health nutrition">
-            <option disabled selected value> -- select an option -- </option>
-            {% for k, v in codes[3]['hnp'].items() %}
-            <option value="{{ k }}">{{ v }}</option>
+            <option disabled selected value> -- select an health and nutrition indicator -- </option>
+            {% for i in codes[3]['hnp'] | dictsort(false, 'value') %}
+            <option value="{{ i[0] }}">{{ i[1] }}</option>
             {% endfor %}
         </optgroup>
     </select>
     <select name="point_year">
-        <option value="1990">1990</option>
-        <option value="2000">2000</option>
-        <option value="2010">2010</option>
+        <option disabled selected value> -- select a year -- </option>
+        {% for y in year %}
+            <option value="{{ y }}">year{{ y }}</option>
+        {% endfor %}
     </select>
     <button type="submit"> Go</button>
 </form>

@@ -10,7 +10,8 @@ from app.get_data import wb_indicator_to_geojson_polygon, wb_indicator_to_geojso
 def index():
     with open('app/static/data/indicator_codes.json', 'r') as codes:
         codes = json.load(codes)
-    return render_template('index.html', title='Home', codes=codes)
+        year = range(1960, 2016)
+    return render_template('index.html', title='Home', codes=codes, year=year)
 
 
 @app.route('/get_polygon_indicator', methods=['GET', 'POST'])

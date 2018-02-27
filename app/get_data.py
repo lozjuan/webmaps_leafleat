@@ -105,7 +105,6 @@ def get_indicator_codes():
     data_source = 'http://api.worldbank.org/v2/indicators?format=json&per_page=17066'
     wb_raw = requests.get(data_source)
     wb_json = wb_raw.json()
-    ind_inf = []
     wdi, es, gs, hnps = {}, {}, {}, {}
     for i in wb_json[1]:
         if i['source']['value'] == 'World Development Indicators' or i['source']['value'] == 'WDI Database Archives':
@@ -117,12 +116,10 @@ def get_indicator_codes():
         elif i['source']['value'] == 'Health Nutrition and Population Statistics by Wealth Quintile' \
                 or i['source']['value'] == 'Health Nutrition and Population Statistics':
             hnps.update({i['id']: i['name']})
-    ind_inf.append({'wdi': wdi})
-    ind_inf.append({'es': es})
-    ind_inf.append({'gs': gs})
-    ind_inf.append({'hnp': hnps})
-    with open('static/data/indicator_codes.json', 'w') as file:
+    ind_inf = [{'wdi': wdi}, {'es': es}, {'gs': gs}, {'hnp': hnps}]
+    with open('static/data/indicator_codes_2.json', 'w') as file:
         file.write(json.dumps(ind_inf))
+
 
 if __name__ == '__main__':
     app.run()

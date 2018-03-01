@@ -8,9 +8,9 @@ from app.get_data import wb_indicator_to_geojson_polygon, wb_indicator_to_geojso
 @app.route('/')
 @app.route('/index')
 def index():
-    with open('app/static/data/indicator_codes.json', 'r') as codes:
+    with open('app/static/data/wdi_codes.json', 'r') as codes:
         codes = json.load(codes)
-        year = range(1960, 2016)
+        year = range(1990, 2018)
     return render_template('index.html', title='Home', codes=codes, year=year)
 
 

@@ -1,8 +1,10 @@
 import requests
 import geojson
 import json
-import numpy as np
+import pandas as pd
 from app import app
+from pandas.io.json import json_normalize
+
 
 
 @app.after_request
@@ -79,46 +81,45 @@ def wb_indicator_to_geojson_polygon(ind_code, year):
 
 
 def create_wb_legend_values(outfile, ind_code, year):
-    """Calculates the percentiles of a indicator list values and saves it as json for building legends"""
-    data_source = "http://api.worldbank.org/v2/countries/all/indicators/" \
-                  "{0}?date={1}&format=json&per_page=300".format(ind_code, year)
+    """Calculates legend values and saves it as json"""
+    data_source = "http://api.worldbank.org/v2/countries/all/indicators/{0}?date={1}&format=json&per_page=300".format(ind_code, year)
     wb_raw = requests.get(data_source)
     wb_json = wb_raw.json()
-    raw_values = []
-    percentiles = []
-    for i in wb_json[1]:
-        if i['countryiso3code'] != "":
-            raw_values.append(i['value'])
-    val = [x for x in raw_values if x is not None]
-    cleaned_values = np.array(val)
-    i = 0
-    while i < 100:
-        percentiles.append(np.percentile(cleaned_values, i + 12.5))
-        i += 12.5
-    int_percentiles = [int(round(x)) for x in percentiles]
-
+    all_data = json_normalize(wb_json[1])
+    values = pd.DataFrame(all_data['value'])
+    quantiles = values.quantile([0.2, 0.4, 0.6, 0.8])
+    bounds = quantiles['value'].tolist() + values.min().tolist() + values.max().tolist()
+    i = iter(sorted(bounds))
+    result = {x: next(i) for x in range(6)}
     with open(outfile, 'w') as file:
-        file.write(json.dumps(dict(enumerate(int_percentiles))))
+        file.write(json.dumps(result))
 
 
-def get_indicator_codes():
-    data_source = 'http://api.worldbank.org/v2/indicators?format=json&per_page=17066'
-    wb_raw = requests.get(data_source)
+def get_indicator_codes(source, year):
+    """Get codes from world bank indicators having 80% of data not null or NaN"""
+    ind_info = 'http://api.worldbank.org/v2/indicators?format=json&per_page=17066'
+    wb_raw = requests.get(ind_info)
     wb_json = wb_raw.json()
-    wdi, es, gs, hnps = {}, {}, {}, {}
-    for i in wb_json[1]:
-        if i['source']['value'] == 'World Development Indicators' or i['source']['value'] == 'WDI Database Archives':
-            wdi.update({i['id']: i['name']})
-        elif i['source']['value'] == 'Education Statistics':
-            es.update({i['id']: i['name']})
-        elif i['source']['value'] == 'Gender Statistics':
-            gs.update({i['id']: i['name']})
-        elif i['source']['value'] == 'Health Nutrition and Population Statistics by Wealth Quintile' \
-                or i['source']['value'] == 'Health Nutrition and Population Statistics':
-            hnps.update({i['id']: i['name']})
-    ind_inf = [{'wdi': wdi}, {'es': es}, {'gs': gs}, {'hnp': hnps}]
-    with open('static/data/indicator_codes_2.json', 'w') as file:
-        file.write(json.dumps(ind_inf))
+    all_indicator = json_normalize(wb_json[1])
+    wdi = all_indicator[all_indicator['source.value'] == source]
+    code_id = wdi['id'].to_frame()
+    result = {}
+    for c in code_id['id']:
+        ind_data = "http://api.worldbank.org/v2/countries/all/indicators/{0}?date={1}&format=json&per_page=300".format(c, year)
+        wb_raw = requests.get(ind_data)
+        wb_json = wb_raw.json()
+        if wb_json[1] is not None:
+            df = json_normalize(wb_json[1])
+            df1, df2 = df.iloc[:, 5:7], df.iloc[:, 9:].astype('float64')
+            data = df1.join(df2, lsuffix='_df1', rsuffix='_df2')
+            no_null_val = data.dropna()
+            if not no_null_val.empty and len(no_null_val['value']) > 155:
+                ind, name = ''.join(no_null_val.drop(columns=['value']).drop_duplicates()['indicator.id']), \
+                            ''.join(no_null_val.drop(columns=['value']).drop_duplicates()['indicator.value'])
+                result.update({ind: name})
+                print(result)
+    with open('app/static/data/wdi_codes.json', 'w') as file:
+        file.write(json.dumps(result))
 
 
 if __name__ == '__main__':

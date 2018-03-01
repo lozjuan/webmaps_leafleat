@@ -64,16 +64,13 @@ indicatorInfo.update = function(props) {
 var legend = L.control({ position: 'bottomright' });
 var lab = [];
 $.getJSON("static/data/ind_legend_polygon.json", function(data) {
-    lab.push(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
+    lab.push(data[0], data[1], data[2], data[3], data[4], data[5])
 });
 
 function getColorlgd(c) {
-    return c > lab[7] ? '#800026' :
-        c > lab[6] ? '#BD0026' :
-        c > lab[5] ? '#E31A1C' :
-        c > lab[4] ? '#FC4E2A' :
-        c > lab[3] ? '#FD8D3C' :
-        c > lab[2] ? '#FEB24C' :
+    return c > lab[4] ? '#800026' :
+        c > lab[3] ? '#E31A1C' :
+        c > lab[2] ? '#FD8D3C' :
         c > lab[1] ? '#FED976' :
         c === null ? '#000' :
         '#FFEDA0';
@@ -83,11 +80,10 @@ $.getJSON("static/data/wb_ind_polygon.json", function(data) {
     var year = data.features[1].properties.year;
     legend.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [lab[0], lab[1], lab[2], lab[3], lab[4], lab[5], lab[6], lab[7]],
+            grades = [lab[0], lab[1], lab[2], lab[3], lab[4], lab[5]],
             labels = ['<strong> Word Bank API Data<br>' + title + ' ' + year + '</strong>'],
-            values = ['< ' + lab[0].toString(), '< ' + lab[1].toString(), '< ' + lab[2].toString(),
-                '< ' + lab[3].toString(), '< ' + lab[4].toString(), '< ' + lab[5].toString(), '< ' + lab[6].toString(), '+ ' + lab[7].toString()
-            ],
+            values = [lab[0].toString() + ' - ' + lab[1].toString(), '< ' + lab[2].toString(), '< ' + lab[3].toString(),
+                '< ' + lab[4].toString(), lab[4].toString() + ' - ' + lab[5].toString()],
             from;
         for (var i = 0; i < grades.length; i++) {
             value = values[i];

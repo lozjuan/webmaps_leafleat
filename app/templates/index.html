@@ -13,20 +13,29 @@
 </head>
 
 <body>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
 <form action="{{url_for('get_polygon_indicator')}}" method="post">
     <p>Polygon layer indicator <br> {% if error_pol %} {{ error_pol }} {% endif %} </p>
     <select id="list_ind" name="polygon_ind">
         <optgroup label="World development indicators">
-            <option disabled selected value> -- select a world development indicator -- </option>
+            <option disabled selected value> -- select a world development indicator --</option>
             {% for k, v in codes | dictsort(false, 'value') %}
-                <option value="{{ k }}">{{ v }}</option>
+            <option value="{{ k }}">{{ v }}</option>
             {% endfor %}
         </optgroup>
     </select>
     <select name="polygon_year">
-        <option disabled selected value> -- select a year -- </option>
+        <option disabled selected value> -- select a year --</option>
         {% for y in year | sort(reverse=True) %}
-            <option value="{{ y }}">{{ y }}</option>
+        <option value="{{ y }}">{{ y }}</option>
         {% endfor %}
     </select>
     <button type="submit"> Go</button>
@@ -35,16 +44,16 @@
     <p>Point layer indicator <br> {% if error_point %} {{ error_point }} {% endif %}</p>
     <select id="list_ind" name="point_ind">
         <optgroup label="Health nutrition">
-            <option disabled selected value> -- select an health and nutrition indicator -- </option>
+            <option disabled selected value> -- select an health and nutrition indicator --</option>
             {% for k, v in codes | dictsort(false, 'value') %}
             <option value="{{ k }}">{{ v }}</option>
             {% endfor %}
         </optgroup>
     </select>
     <select name="point_year">
-        <option disabled selected value> -- select a year -- </option>
+        <option disabled selected value> -- select a year --</option>
         {% for y in year| sort(reverse=True) %}
-            <option value="{{ y }}">{{ y }}</option>
+        <option value="{{ y }}">{{ y }}</option>
         {% endfor %}
     </select>
     <button type="submit"> Go</button>

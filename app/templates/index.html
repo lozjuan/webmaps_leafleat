@@ -14,7 +14,7 @@
 
 <body>
 <form action="{{url_for('get_polygon_indicator')}}" method="post">
-    <p>Polygon layer indicator</p>
+    <p>Polygon layer indicator <br> {% if error_pol %} {{ error_pol }} {% endif %} </p>
     <select id="list_ind" name="polygon_ind">
         <optgroup label="World development indicators">
             <option disabled selected value> -- select a world development indicator -- </option>
@@ -32,7 +32,7 @@
     <button type="submit"> Go</button>
 </form>
 <form action="{{url_for('get_point_indicator')}}" method="post">
-    <p>Point layer indicator</p>
+    <p>Point layer indicator <br> {% if error_point %} {{ error_point }} {% endif %}</p>
     <select id="list_ind" name="point_ind">
         <optgroup label="Health nutrition">
             <option disabled selected value> -- select an health and nutrition indicator -- </option>

@@ -80,7 +80,7 @@ $.getJSON("static/data/wb_ind_polygon.json", function(data) {
     var year = data.features[1].properties.year;
     legend.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [lab[0], lab[1], lab[2], lab[3], lab[4], lab[5]],
+            grades = [lab[0], lab[1], lab[2], lab[3], lab[4]],
             labels = ['<strong> Word Bank API Data<br>' + title + ' ' + year + '</strong>'],
             values = [lab[0].toString() + ' - ' + lab[1].toString(), '< ' + lab[2].toString(), '< ' + lab[3].toString(),
                 '< ' + lab[4].toString(), lab[4].toString() + ' - ' + lab[5].toString()],
@@ -91,6 +91,7 @@ $.getJSON("static/data/wb_ind_polygon.json", function(data) {
             labels.push(
                 '<i style="background:' + getColorlgd(from + 1) + '"></i> ' + value);
         }
+        labels.push('<i style="background:' + '#000' + '"></i> ' + 'Unavailable data');
         div.innerHTML = labels.join('<br>');
         return div
     };
@@ -172,30 +173,26 @@ var world = new L.geoJson(world, {
 //Point map legend (dynamic legend)
 var lab1 = [];
 $.getJSON("static/data/ind_legend_point.json", function(data) {
-    lab1.push(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8])
+    lab1.push(data[0], data[1], data[2], data[3], data[4], data[5])
 });
 var legend1 = L.control({ position: 'bottomleft' })
 
 function getColorPoint(c) {
-    return c > lab1[7] ? '#800026' :
-        c > lab1[6] ? '#BD0026' :
-        c > lab1[5] ? '#E31A1C' :
-        c > lab1[4] ? '#FC4E2A' :
-        c > lab1[3] ? '#FD8D3C' :
-        c > lab1[2] ? '#FEB24C' :
-        c > lab1[1] ? '#FED976' :
-        c === null ? '#000' :
-        '#FFEDA0';
+    return c > lab1[4] ? '#800026' :
+           c > lab1[3] ? '#E31A1C' :
+           c > lab1[2] ? '#FD8D3C' :
+           c > lab1[1] ? '#FED976' :
+           c === null ? '#000' :
+           '#FFEDA0';
 
 }
 $.getJSON("static/data/wb_ind_point.json", function(data) {
     legend1.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = grades = [lab1[0], lab1[1], lab1[2], lab1[3], lab1[4], lab1[5], lab1[6], lab1[7]],
-            labels = [data.features[1].properties.indicator + ' ' + data.features[1].properties.year],
-            values = ['< ' + lab1[0].toString(), '< ' + lab1[1].toString(), '< ' + lab1[2].toString(),
-                '< ' + lab1[3].toString(), '< ' + lab1[4].toString(), '< ' + lab1[5].toString(), '< ' + lab1[6].toString(), '+ ' + lab1[7].toString()
-            ],
+            grades = grades = [lab1[0], lab1[1], lab1[2], lab1[3], lab1[4]],
+            labels = ['<b>' + data.features[1].properties.indicator + '</b>' + ' ' + data.features[1].properties.year],
+            values = [lab1[0].toString() + ' - ' + lab1[1].toString(), '< ' + lab1[2].toString(), '< ' + lab1[3].toString(),
+                            '< ' + lab1[4].toString(), lab1[4].toString() + ' - ' + lab1[5].toString()],
             from;
         for (var i = 0; i < grades.length; i++) {
             value = values[i];
@@ -203,6 +200,7 @@ $.getJSON("static/data/wb_ind_point.json", function(data) {
             labels.push(
                 '<i id="circle" style="background:' + getColorPoint(from + 1) + '"></i> ' + value);
         }
+        labels.push('<i id="circle" style="background:' + '#000' + '"></i> ' + 'Unavailable data');
         div.innerHTML = labels.join('<br>');
         return div
 

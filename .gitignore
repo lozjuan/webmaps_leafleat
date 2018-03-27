@@ -1,4 +1,10 @@
 **/.DS_Store
-#ignore intellij config
+# ignore intellij config
 *.iml
 .idea
+# ignore virtual env files
+venv/
+.project
+*.pyc
+*.pyo
+*~

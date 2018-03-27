@@ -18,7 +18,7 @@ def geonames_to_geojson_point(outfile):
             capitals.append(
                 geojson.Feature(geometry=geojson.Point((round(float(x['lng']), 1), round(float(x['lat']), 1))),
                                 properties={'name': x['name'], 'country': x['countryName'],
-                                            'population': x['population']}))
+                                            'population': x['population'], 'iso2': x['countryCode']}))
 
     with open(outfile, 'w') as file:
         geojson.dump(geojson.FeatureCollection(capitals), file)
@@ -123,7 +123,6 @@ def get_indicator_codes(source, year):
                 print(result)
     with open('app/static/data/wdi_codes.json', 'w') as file:
         file.write(json.dumps(result))
-
 
 if __name__ == '__main__':
     app.run()

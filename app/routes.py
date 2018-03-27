@@ -1,10 +1,12 @@
-from werkzeug.utils import redirect
-from app import app
-from flask import render_template, request, flash
 import json
+
+from flask import render_template, request
+from werkzeug.utils import redirect
+
+from app import app
 from app.get_data import wb_indicator_to_geojson_polygon, wb_indicator_to_geojson_point
 
-year = list(range(1990, 2018))
+year = list(range(1990, 2017))
 with open('app/static/data/wdi_codes.json', 'r') as codes:
     codes = json.load(codes)
 
@@ -33,7 +35,7 @@ def get_polygon_indicator():
         if wb_indicator_to_geojson_polygon(ind, date) == 'Data not available':
             return render_template('index.html', title='Home', codes=codes, year=year, error_pol='Data not available')
     except:
-        error_pol = "Please choose an indicator and a year"
+        error_pol = "Please choose anr indicator and a year"
         return render_template('index.html', title='Home', codes=codes, year=year, error_pol=error_pol)
     return redirect('/index')
 

@@ -2,8 +2,8 @@ import requests
 import geojson
 import json
 import pandas as pd
-from app import app
 from pandas.io.json import json_normalize
+from app import app
 
 
 def geonames_to_geojson_point(outfile):

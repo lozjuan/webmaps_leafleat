@@ -5,6 +5,6 @@ setup(name='World Bank Indicators Mapper',
       description='Mapping World Bank Indicators',
       author='JuanTanamo',
       author_email='lozjuan@gmail.com',
-      url='http://www.python.org/sigs/distutils-sig/',
+      url='https://github.com/lozjuan/webmaps_leafleat/tree/master/app',
       install_requires=['Flask', 'requests', 'geojson', 'pandas'],
       )

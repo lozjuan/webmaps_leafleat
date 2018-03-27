@@ -4,7 +4,7 @@ from flask import render_template, request
 from werkzeug.utils import redirect
 
 from app import app
-from app.get_data import wb_indicator_to_geojson_polygon, wb_indicator_to_geojson_point
+from app.app import wb_indicator_to_geojson_polygon, wb_indicator_to_geojson_point
 
 year = list(range(1990, 2017))
 with open('app/static/data/wdi_codes.json', 'r') as codes:

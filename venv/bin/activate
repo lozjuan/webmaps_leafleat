@@ -77,4 +77,4 @@ fi
 
 # Set evn variables when activating the virtual environment
 export LC_ALL=en_US.UTF-8
-export FLASK_APP=app/get_data.py
+export FLASK_APP=app/app.py
